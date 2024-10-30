@@ -1,6 +1,5 @@
 export default class HolbertonCourse {
-constructor(name, length, students){
-
+  constructor(name, length, students) {
     if (typeof name !== 'string') {
       throw new Error('Name must be a valid string!');
     } else {
