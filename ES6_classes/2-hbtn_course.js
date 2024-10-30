@@ -23,7 +23,7 @@ export default class HolbertonCourse {
   }
 
   set name(newName) {
-    if (typeof newName === 'string'){
+    if (typeof newName === 'string') {
       this._name = newName;
     } else {
       throw new Error('newName must be a valid string');
@@ -35,23 +35,21 @@ export default class HolbertonCourse {
   }
 
   set length(newLength) {
-    if (typeof newLength === 'number' || 0 >= newLength) {
+    if (typeof newLength === 'number' || newLength <= 0) {
       this._length = newLength;
     } else {
       throw new Error('newLength must be a valid number');
     }
   }
 
-
   get students() {
     return this._students;
   }
 
   set students(newStudents) {
-    if (Array.isArray(newStudents)){
+    if (Array.isArray(newStudents)) {
       this._students = newStudents;
-    }
-    else {
+    } else {
       throw new Error('newStudent must be of an array');
     }
   }
