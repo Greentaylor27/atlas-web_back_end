@@ -1,8 +1,21 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = name;
-    this._length = length;
-    this._students = students;
+
+    if (typeof name !== 'string'){
+      throw new Error("Name must be a valid string!");
+    } else {
+      this._name = name;
+    }
+    if (typeof length !== 'number' || length <= 0) {
+      throw new Error('Length must be a valid number');
+    } else {
+      this._length = length;
+    }
+    if (!Array.isArray(students)){
+      throw new Error('invalid students: must be array');
+    } else {
+      this._students = students;
+    }
   }
 
   get name(){
@@ -28,5 +41,5 @@ export default class HolbertonCourse {
   set students(newStudents) {
     this._students = newStudents;
   }
-  
+
 }
