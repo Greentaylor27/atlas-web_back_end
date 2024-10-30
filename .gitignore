@@ -1,12 +1,2 @@
 */node_modules/
-ES6_basic/0-main.js
-ES6_basic/1-main.js
-ES6_basic/2-main.js
-ES6_basic/3-main.js
-ES6_basic/4-main.js
-ES6_basic/5-main.js
-ES6_basic/6-main.js
-ES6_basic/7-main.js
-ES6_basic/8-main.js
-ES6_basic/9-main.js
-ES6_basic/10-main.js
+*/*-main.js
