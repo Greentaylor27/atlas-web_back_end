@@ -10,7 +10,7 @@ export default class Airport {
     this._code = code;
   }
 
-  static toString() {
+  toString() {
     return `[object ${this._code}]`;
   }
 }
