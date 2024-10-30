@@ -1,5 +1,5 @@
 export default class Airport {
-  constructor (name, code) {
+  constructor(name, code) {
     if (typeof name !== 'string') {
       throw new Error('Name must be a valid string');
     }
