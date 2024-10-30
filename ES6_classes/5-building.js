@@ -1,9 +1,10 @@
 export default class Building {
   constructor(sqft){
-    if (sqft !== 'number' || sqft <= 0) {
+    if (sqft === 'number' || sqft >= 0) {
+      this._sqft = sqft;
+    } else {
       throw new Error('sqft must be a valid number');
     }
-    this._sqft = sqft;
   }
 
   get sqft() {
@@ -17,5 +18,5 @@ export default class Building {
     this._sqft = newSqft;
   }
 
-  
+
 }
