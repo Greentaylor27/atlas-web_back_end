@@ -1,9 +1,9 @@
 export default function getStudentIdsSum(arr) {
   if (!Array.isArray(arr)) {
-    return [];
+    return 0;
   }
 
   const value = 0;
-  return newArr.reduce((accumulator, arr) => accumulator + arr.id, value);
+  return arr.reduce((accumulator, arr) => accumulator + arr.id, value);
 }
 
