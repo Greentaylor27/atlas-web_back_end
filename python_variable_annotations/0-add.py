@@ -5,6 +5,7 @@
 Everything must be documented for this task so document I shall
 """
 
+
 def add(a: float, b: float) -> float:
     """
     Adds two floats together to return a float
