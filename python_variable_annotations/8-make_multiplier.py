@@ -3,7 +3,7 @@
 """
 Module sets a float as a multiplier to be used later
 """
-from collections.abc import Callable
+from typing import Callable
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
