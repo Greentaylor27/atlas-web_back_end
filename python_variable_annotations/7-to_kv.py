@@ -6,7 +6,7 @@ Module takes a string and an int or float as an argument and returns a tuple
 from typing import Tuple, Union, Optional
 
 
-def to_kv(k: str, v: Union[int | float]) -> Tuple:
+def to_kv(k: str, v: Union[int, float]) -> Tuple:
     """
     Method that takes two arguments and returns them as a tuple
 
