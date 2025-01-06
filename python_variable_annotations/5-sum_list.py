@@ -5,9 +5,10 @@
 
 First attempt at complex type annotation
 """
+from typing import List
 
 
-def sum_list(input_list: list[float]) -> float:
+def sum_list(input_list: List[float]) -> float:
     """
     Takes a list of floats and adds them together
 
