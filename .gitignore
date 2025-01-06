@@ -1,6 +1,5 @@
 */node_modules/
-ES6_basic/0-main.js
-ES6_basic/1-main.js
-ES6_basic/2-main.js
-ES6_basic/3-main.js
-ES6_basic/4-main.js
+*/*-main.js
+*-main.py
+python_variable_annotations/__pycache__/0-add.cpython-311.pyc
+*/__pycache__/
