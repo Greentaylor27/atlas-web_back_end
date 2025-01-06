@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""
+0-add.py
+
+Everything must be documented for this task so document I shall
+"""
 
 def add(a: float, b: float) -> float:
     """
