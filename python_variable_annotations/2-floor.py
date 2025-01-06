@@ -7,7 +7,7 @@ More basic annotation practice
 """
 
 
-def floor(n:float) -> int:
+def floor(n:float) -> int: 
     """
     returns the smallest integer value of a float
 
