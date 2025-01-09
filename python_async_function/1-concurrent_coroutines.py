@@ -20,6 +20,6 @@ async def wait_n(n: int, max_delay: int = 10) -> List[float]:
     """
     
     wait_random = __import__('0-basic_async_syntax').wait_random
-    delay = wait_random(n, max_delay)
+    delay = wait_random(n)
     await asyncio.sleep(delay)
     return delay
