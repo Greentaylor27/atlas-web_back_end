@@ -4,11 +4,11 @@
 Module used to practice Tasks
 """
 import asyncio
-from typing import Awaitable
+from typing import Awaitable, Any
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_random(max_delay: int) -> Awaitable[float]:
+def task_wait_random(max_delay: int) -> Any:
     """
     Don't really quite know what this is suppose to do I just know it returns a task
 
