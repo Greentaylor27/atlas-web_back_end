@@ -8,7 +8,7 @@ from typing import List
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_n(n: int, max_delay: int) -> List[float]:
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
     Method used to complete multiple tasks concurrently
 
@@ -20,7 +20,7 @@ def task_wait_n(n: int, max_delay: int) -> List[float]:
         List[float]: Returns a list of time taken
     """
 
-    tasks = asyncio.create_task([wait_random(max_delay) for _ in range(n)])
+    tasks = [await wait_random(max_delay) for _ in range(n)]
     results = asyncio.gather(*tasks)
 
     return sorted(results)
