@@ -10,13 +10,13 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 
 def task_wait_random(max_delay: int) -> asyncio.Task:
     """
-    Don't really quite know what this is suppose to do I just know it returns a task
+    Creates a task
 
     Args:
-        max_delay (int): The number being passed off to wait_random
+        max_delay (int): Delay in seconds
 
     Returns:
-        Awaitable[float]: Not even sure this is the correct annotation for this return
+        asyncio.Task: A Task
     """
 
     task = asyncio.create_task(wait_random(max_delay))
