@@ -19,6 +19,5 @@ def task_wait_random(max_delay: int) -> Any:
         Awaitable[float]: Not even sure this is the correct annotation for this return
     """
 
-    coro = asyncio.run(wait_random(max_delay))
-    task = asyncio.create_task(coro)
+    task = asyncio.create_task(wait_random(max_delay))
     return task
