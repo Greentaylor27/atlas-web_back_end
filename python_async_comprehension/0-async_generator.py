@@ -17,5 +17,6 @@ async def async_generator() -> List[float]:
     """
 
     for _ in range(10):
+        asyncio.sleep(1)
         result = await random.randrange(0, 10)
     return result
