@@ -5,10 +5,10 @@ Module used to make a random generator
 """
 import asyncio
 import random
-from typing import AsyncGenerator
+from typing import Generator, Any
 
 
-async def async_generator() -> AsyncGenerator:
+def async_generator() -> Generator[float, Any, Any]:
     """
     Method randomly generators a number between 1 and 10
 
@@ -17,5 +17,5 @@ async def async_generator() -> AsyncGenerator:
     """
 
     for _ in range(10):
-        await asyncio.sleep(1)
+        asyncio.sleep(1)
         yield random.randint(0, 10)
