@@ -5,7 +5,7 @@ Module used to practice Async Comprehemsions
 """
 import asyncio
 from typing import List
-async_generator = __import__('0-async_generator').async_generator
+generator = __import__('0-async_generator').async_generator
 
 
 async def async_comprehension() -> List[float]:
@@ -15,4 +15,7 @@ async def async_comprehension() -> List[float]:
     Returns:
         List[float]: A list
     """
-    return [await async_generator]
+
+    results = []
+    results.append(generator)
+    return results
