@@ -17,5 +17,8 @@ async def async_comprehension() -> List[float]:
     """
 
     results = []
-    results.append(generator)
+    for number in generator():
+        processed = await generator()
+        results.append(processed)
+
     return results
