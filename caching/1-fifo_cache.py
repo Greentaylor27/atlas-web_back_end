@@ -44,4 +44,6 @@ class FIFOCache(BaseCaching):
         Returns:
             All data associated with the key
         """
-        return self.cache_data.get(key)
+        keys = self.cache_data.get(key)
+        key_list = list(keys)
+        return key_list
