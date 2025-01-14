@@ -25,9 +25,7 @@ class BasicCache(BaseCaching):
             key: Where something is stored i.e. ID
             item: What is being stored
         """
-        if key == None or item == None:
-            pass
-        else:
+        if key or item:
             self.cache_data[key] = item
 
     def get(self, key):
