@@ -6,5 +6,5 @@ Module to practice basic caching
 from base_caching import BaseCaching
 
 
-class BasicCache:
+class BasicCache(BaseCaching):
     x = 5
