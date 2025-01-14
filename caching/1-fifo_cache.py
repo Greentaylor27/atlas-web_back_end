@@ -25,26 +25,18 @@ class FIFOCache(BaseCaching):
             key: Where something is to be stored
             item: What is being stored
         """
+        key_list = list(self.cache_data.keys())
         if key and item:
             self.cache_data[key] = item
-
-        keys = self.cache_data.keys()
-
-        if len(keys) >= BaseCaching.MAX_ITEMS:
-            print(f"DISCARD: {keys[0]}")
-            self.cache_data.popitem(0)
+            if len(key_list) > BaseCaching.MAX_ITEMS:
+                print(f"DISCARD: {key_list[0]}")
+                del self.cache_data[key]
 
     def get(self, key):
         """
-        Grabs the dictionary entry using the key
+        returns the entry using the key
 
         Args:
-            key: Where to find the item
-
-        Returns:
-            All data associated with the key
+            key: The entry you are trying to look for
         """
-        if key in self.cache_data:
-            return self.cache_data[key]
-        else:
-            pass
+        return self.cache_data.get(key)
