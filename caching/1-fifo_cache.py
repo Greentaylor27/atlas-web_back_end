@@ -33,3 +33,15 @@ class FIFOCache(BaseCaching):
         if len(keys) >= BaseCaching.MAX_ITEMS:
             print(f"DISCARD: {keys[0]}")
             self.cache_data.popitem(0)
+
+    def get(self, key):
+        """
+        Grabs the dictionary entry using the key
+
+        Args:
+            key: Where to find the item
+
+        Returns:
+            All data associated with the key
+        """
+        return self.cache_data.get(key)
