@@ -14,3 +14,14 @@ class BasicCache(BaseCaching):
         BaseCaching (class): Needed methods for basic caching
     """
 
+    def __init__(self):
+        super().__init__()
+
+    def put(self, key, item):
+        if key == None or item == None:
+            pass
+        else:
+            self.cache_data[key] = item
+
+    def get(self, key):
+        return self.cache_data.get(key)
