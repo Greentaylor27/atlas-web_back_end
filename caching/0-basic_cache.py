@@ -7,4 +7,10 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
-    x = 5
+    """
+    Class for basic caching practice
+
+    Args:
+        BaseCaching (class): Needed methods for basic caching
+    """
+
