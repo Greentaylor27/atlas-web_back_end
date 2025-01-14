@@ -31,4 +31,13 @@ class BasicCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
+        """
+        Gets the dictionary entry where data is stored
+
+        Args:
+            key: Where you want to pull from
+
+        Returns:
+            Return: Full dictionary entry. Key and value
+        """
         return self.cache_data.get(key)
