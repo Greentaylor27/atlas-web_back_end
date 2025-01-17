@@ -38,7 +38,7 @@ class LRUCache(BaseCaching):
             least_used = list(self.cache_data.keys())[0]
 
             print(f"DISCARD: {least_used}")
-            self.cache_data.popitem()
+            self.cache_data.popitem(Last=True)
 
     def get(self, key):
         """
