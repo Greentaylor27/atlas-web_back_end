@@ -33,8 +33,6 @@ class FIFOCache(BaseCaching):
         if len(keys) > BaseCaching.MAX_ITEMS:
             print(f"DISCARD: {next(iter(self.cache_data))}")
             self.cache_data.pop(next(iter(self.cache_data)))
-        else:
-            print("We are hungry")
 
     def get(self, key):
         """
