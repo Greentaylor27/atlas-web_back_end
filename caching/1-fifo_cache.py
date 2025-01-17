@@ -26,7 +26,7 @@ class FIFOCache(BaseCaching):
             item: What is being stored
         """
         keys = self.cache_data.keys()
-                
+        
         if key and item:
             self.cache_data[key] = item
 
