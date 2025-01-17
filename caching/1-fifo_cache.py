@@ -25,12 +25,16 @@ class FIFOCache(BaseCaching):
             key: Where something is to be stored
             item: What is being stored
         """
-        key_list = list(self.cache_data.keys())
+        keys = self.cache_data.keys()
+                
         if key and item:
             self.cache_data[key] = item
-            if len(key_list) > BaseCaching.MAX_ITEMS:
-                print(f"DISCARD: {key_list[0]}")
-                del self.cache_data[key]
+
+        if len(keys) > BaseCaching.MAX_ITEMS:
+            print(f"DISCARD: {next(iter(self.cache_data))}")
+            self.cache_data.pop(next(iter(self.cache_data)))
+        else:
+            print("We are hungry")
 
     def get(self, key):
         """
