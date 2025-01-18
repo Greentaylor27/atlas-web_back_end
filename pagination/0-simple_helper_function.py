@@ -17,4 +17,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     Returns:
         Tuple[int, int]: should return (start_index, end_index)
     """
-    return ((page - 1) * (page_size))
+    if page > 1:
+        return (page_size * (page - 1))
+    else:
+        return page_size * page
