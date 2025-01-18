@@ -1,4 +1,4 @@
-#!/bin/usr/env python3
+#!/usr/bin/env python3
 
 """
 Module used to practice Pagination
@@ -18,4 +18,3 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
         Tuple[int, int]: should return (start_index, end_index)
     """
 
-    
