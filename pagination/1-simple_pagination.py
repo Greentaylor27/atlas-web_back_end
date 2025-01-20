@@ -39,8 +39,11 @@ class Server:
         Returns:
             List[List]: _description_
         """
-        assert page < 0, "page should be greater than 0"
-        assert page_size < 0, "page_size should be greater than 0"
+        assert page < 0, "page must be greater than 0"
+        assert type(page) == int, "page must be an integer"
+
+        assert page_size < 0, "page_size must be greater than 0"
+        assert type(page_size) == int, "Page_size must be an integer"
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
