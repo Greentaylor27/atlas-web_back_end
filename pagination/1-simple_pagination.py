@@ -39,11 +39,16 @@ class Server:
         Returns:
             List[List]: _description_
         """
-        assert page > 0 and isinstance(page, int), ""
-        assert page_size > 0 and isinstance(page_size, int), ""
-        start, end = index_range(page, page_size)
 
-        return self.dataset[start:end]
+        #Assertion tests
+        assert isinstance(page, int) and page > 0, "page must be a positive int"
+        assert isinstance(page_size, int) and page_size > 0, "page_size must be a postive int"
+
+        #Logic
+        start, end = index_range(page, page_size)
+        data = self.dataset()
+
+        return data[start:end]
 
 
 
