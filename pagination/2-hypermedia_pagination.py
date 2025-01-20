@@ -84,6 +84,7 @@ class Server:
         }
         return page_data
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     Used to index the page to determine how big the page size is?
