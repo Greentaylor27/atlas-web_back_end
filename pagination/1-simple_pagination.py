@@ -39,8 +39,11 @@ class Server:
         Returns:
             List[List]: _description_
         """
-        assert page > 0 and isinstance(page, int)
-        assert page_size > 0 and isinstance(page_size, int)
+        assert page > 0 and isinstance(page, int), ""
+        assert page_size > 0 and isinstance(page_size, int), ""
+        start, end = index_range(page, page_size)
+
+        return self.dataset[start:end]
 
 
 
