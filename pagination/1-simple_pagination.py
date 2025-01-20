@@ -39,9 +39,8 @@ class Server:
         Returns:
             List[List]: _description_
         """
-        assert page < 0 and type(page) == int
-
-        assert page_size < 0 and type(page_size) == int
+        assert page > 0 and isinstance(page, int)
+        assert page_size > 0 and isinstance(page_size, int)
 
 
 
