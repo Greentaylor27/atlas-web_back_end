@@ -51,6 +51,17 @@ class Server:
         if start >= len(data):
             return []
         return data[start:end]
+    
+    def get_hyper(self, page: int = 1, page_size: int = 10):
+        """
+        Makes a dictionary from the hypermedia
+
+        Args:
+            page (int): Number of data points. Defaults to 1.
+            page_size (int): How big the amount of data points are. Defaults to 10
+        """
+        pass
+
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -72,12 +83,3 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     end = page * page_size
 
     return (start, end)
-
-def get_hyper(self, page: int = 1, page_size: int = 10):
-    """
-    Makes a dictionary from the hypermedia
-
-    Args:
-        page (int): Number of data points. Defaults to 1.
-        page_size (int): How big the amount of data points are. Defaults to 10
-    """
