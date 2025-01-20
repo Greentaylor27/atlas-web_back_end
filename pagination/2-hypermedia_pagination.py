@@ -51,14 +51,14 @@ class Server:
         if start >= len(data):
             return []
         return data[start:end]
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10):
         """
         Makes a dictionary from the hypermedia
 
         Args:
-            page (int): Number of data points. Defaults to 1.
-            page_size (int): How big the amount of data points are. Defaults to 10
+            page (int): Location of the data. Defaults to 1.
+            page_size (int): Amount of data given. Default is 10
         """
         total_pages = math.ceil(len(self.dataset()) / page_size)
 
@@ -66,7 +66,7 @@ class Server:
 
         if page < total_pages:
             next_page = page + 1
-        else: 
+        else:
             next_page = None
 
         if page == 1:
@@ -83,8 +83,6 @@ class Server:
             'total_pages': total_pages,
         }
         return page_data
-
-
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
