@@ -60,7 +60,29 @@ class Server:
             page (int): Number of data points. Defaults to 1.
             page_size (int): How big the amount of data points are. Defaults to 10
         """
-        pass
+        total_pages = math.ceil(len(self.dataset()) / page_size)
+
+        # next and previous page validation
+
+        if page < total_pages:
+            next_page = page + 1
+        else: 
+            next_page = None
+
+        if page < 1:
+            prev_page = None
+        else:
+            prev_page = page - 1
+
+        page_data = {
+            'page_size': len(self.get_page(page, page_size)),
+            'page': page,
+            'data': self.get_page(page, page_size),
+            'next_page': next_page,
+            'prev_page': prev_page,
+            'total_pages': total_pages,
+        }
+        return page_data
 
 
 
