@@ -8,25 +8,6 @@ import csv
 import math
 
 
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """
-    Used to index the page to determine how big the page size is?
-
-    Args:
-        page (int): Have no clue
-        page_size (int): How big the page is?
-
-    Returns:
-        Tuple[int, int]: should return (start_index, end_index)
-    """
-    if page > 1:
-        start = page_size * (page - 1)
-    else:
-        start = 0
-
-    end = page * page_size
-
-    return (start, end)
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -48,4 +29,36 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            pass
+        """
+        Gets the data set to a page
+
+        Args:
+            page (int): _description_. Defaults to 1.
+            page_size (int): _description_. Defaults to 10.
+
+        Returns:
+            List[List]: _description_
+        """
+        assert page < 0, "page should be greater than 0"
+        assert page_size < 0, "page_size should be greater than 0"
+
+
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """
+    Used to index the page to determine how big the page size is?
+
+    Args:
+        page (int): Have no clue
+        page_size (int): How big the page is?
+
+    Returns:
+        Tuple[int, int]: should return (start_index, end_index)
+    """
+    if page > 1:
+        start = page_size * (page - 1)
+    else:
+        start = 0
+
+    end = page * page_size
+
+    return (start, end)
