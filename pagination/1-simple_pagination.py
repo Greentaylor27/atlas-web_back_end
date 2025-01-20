@@ -51,6 +51,7 @@ class Server:
         if start >= len(data):
             return []
         return data[start:end]
+    
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
