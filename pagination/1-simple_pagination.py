@@ -8,7 +8,6 @@ import csv
 import math
 
 
-
 class Server:
     """Server class to paginate a database of popular baby names.
     """
@@ -40,14 +39,17 @@ class Server:
             List[List]: _description_
         """
 
-        #Assertion tests
-        assert isinstance(page, int) and page > 0, "page must be a positive int"
-        assert isinstance(page_size, int) and page_size > 0, "page_size must be a postive int"
+        # Assertion tests
+        assert isinstance(page, int) and page > 0, \
+            "page must be a positive int"
+        assert isinstance(page_size, int) and page_size > 0, \
+            "page_size must be a postive int"
 
-        #Logic
+        # Logic
         start, end = index_range(page, page_size)
         data = self.dataset()
-
+        if start < len(data):
+            return []
         return data[start:end]
 
 
