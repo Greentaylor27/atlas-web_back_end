@@ -48,12 +48,9 @@ class Server:
         # Logic
         start, end = index_range(page, page_size)
         data = self.dataset()
-        if start < len(data):
+        if start >= len(data):
             return []
         return data[start:end]
-
-
-
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
