@@ -21,8 +21,6 @@ def filter_datum(fields: List[str], redaction: str, message: str, separator:str)
     Returns:
         str: The log message obfuscated
     """
-    print("Starting now!")
     re.sub(message, redaction, message)
-    print("We are doing something!")
-    print("We have finished")
+    return message
 
