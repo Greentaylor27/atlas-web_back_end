@@ -37,6 +37,7 @@ def get_logger() -> logging.Logger:
     """
     logger = logging.getLogger("user_data")
     logger.setLevel(logging.INFO)
+    logger.propagate = False
     console_handler = logging.StreamHandler()
     formatter = RedactingFormatter.format()
     console_handler.setFormatter(formatter)
