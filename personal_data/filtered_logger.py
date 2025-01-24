@@ -4,12 +4,14 @@
 Module used to practice filtered logging
 """
 import logging
+from typing import List
 import re
 
 
-def filter_datum(fields, redaction, message, separator):
+def filter_datum(fields: List[str], redaction: str, message: str,\
+                separator: str) -> str:
     """
-    Obfuscate a data point
+    obfuscate a data point
 
     Args:
         fields (List[str]): List of strings that need to be obfuscated
