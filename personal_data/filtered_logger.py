@@ -44,6 +44,14 @@ class RedactingFormatter(logging.Formatter):
         self.fields = fields
 
     def format(self, record: logging.LogRecord) -> str:
+        """method for formating log message
+
+        Args:
+            record (logging.LogRecord): data point containing attributes
+
+        Returns:
+            str: Actual log message after obfuscation
+        """
         record.msg = filter_datum(self.fields,
                                   self.REDACTION,
                                   record.msg,
