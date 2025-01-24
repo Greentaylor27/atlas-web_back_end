@@ -35,6 +35,7 @@ class RedactingFormatter(logging.Formatter):
     """ Redacting Formatter class
         """
 
+    PII_FIELDS = ('email', 'ssn', 'password', 'ip', 'last_login')
     REDACTION = "***"
     FORMAT = "[HOLBERTON] %(name)s %(levelname)s %(asctime)-15s: %(message)s"
     SEPARATOR = ";"
@@ -57,3 +58,7 @@ class RedactingFormatter(logging.Formatter):
                                   record.msg,
                                   self.SEPARATOR)
         return super().format(record)
+
+    def get_logger():
+        """_summary_
+        """
