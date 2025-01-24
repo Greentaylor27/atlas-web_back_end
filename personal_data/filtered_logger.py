@@ -6,6 +6,8 @@ Module used to practice filtered logging
 import logging
 from typing import List
 import re
+import os
+import mysql-connector-python
 
 PII_FIELDS = ('name', 'ssn', 'password', 'email', 'phone')
 
@@ -34,12 +36,13 @@ def filter_datum(fields: List[str],
 
 
 def get_logger() -> logging.Logger:
-    """_summary_
+    """Setting up a logger
     """
     logger = logging.getLogger("user_data")
     logger.setLevel(logging.INFO)
     logger.propagate = False
     console_handler = logging.StreamHandler()
+    
     formatter = RedactingFormatter.format()
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
