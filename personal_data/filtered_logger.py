@@ -35,6 +35,12 @@ def filter_datum(fields: List[str],
 def get_logger() -> logging.Logger:
     """_summary_
     """
+    logger = logging.getLogger("user_data")
+    logger.setLevel(logging.INFO)
+    console_handler = logging.StreamHandler()
+    formatter = RedactingFormatter.format()
+    console_handler.setFormatter(formatter)
+    logger.addHandler(console_handler)
 
 
 
