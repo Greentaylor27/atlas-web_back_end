@@ -32,6 +32,7 @@ def filter_datum(fields: List[str],
 
     return message
 
+
 def get_logger() -> logging.Logger:
     """_summary_
     """
@@ -42,7 +43,6 @@ def get_logger() -> logging.Logger:
     formatter = RedactingFormatter.format()
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
-
 
 
 class RedactingFormatter(logging.Formatter):
