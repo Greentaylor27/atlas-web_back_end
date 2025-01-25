@@ -11,4 +11,3 @@ class BasicAuth(Auth):
     Args:
         Auth (class): Parent class
     """
-
