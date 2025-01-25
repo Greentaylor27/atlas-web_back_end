@@ -7,7 +7,7 @@ import logging
 from typing import List
 import re
 import os
-import mysql-connector-python
+from mysql import connector
 
 PII_FIELDS = ('name', 'ssn', 'password', 'email', 'phone')
 
@@ -47,6 +47,24 @@ def get_logger() -> logging.Logger:
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
 
+def get_db() -> mysql.connector.connection.MySQLConnection:
+    """connects to a secure database using environ variables
+
+    Returns:
+        mysql.connector.connection.MySQLConnection: An object
+    """
+    username = os.getenv("PERSONAL_DATA_DB_USERNAME", "root")
+    password = os.getenv("PERSONAL_DATA_DB_PASSWORD", "")
+    host = os.getenv("PERSONAL_DATA_DB_HOST", "localhost")
+    database = os.getenv("PERSONAL_DATA_DB_NAME")
+
+    conn = mysql.connector.connect(
+        user=username,
+        password=password,
+        host=host,
+        database=database
+    )
+    return conn
 
 class RedactingFormatter(logging.Formatter):
     """ Redacting Formatter class
