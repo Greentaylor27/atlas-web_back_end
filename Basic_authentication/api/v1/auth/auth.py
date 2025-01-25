@@ -31,7 +31,6 @@ class Auth:
             if items == path:
                 return False
         
-        return True
 
         
 
