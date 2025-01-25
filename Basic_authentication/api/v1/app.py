@@ -14,6 +14,19 @@ app.register_blueprint(app_views)
 CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 
+@app.errorhandler(403)
+def youre_forbidden(error):
+    """Forbidden
+
+    Args:
+        error (403): forbidden
+
+    Returns:
+        Jsonified response
+    """
+    return jsonify({"error": "Forbidden"}), 403
+
+
 @app.errorhandler(401)
 def not_authorized(error):
     """not authorized user
