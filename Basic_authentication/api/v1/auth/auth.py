@@ -29,9 +29,9 @@ class Auth:
         
         for items in excluded_paths:
             if items == path:
-                return False
-            else:
                 return True
+            else:
+                return False
 
         
 
