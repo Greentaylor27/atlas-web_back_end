@@ -23,7 +23,7 @@ class Auth:
             bool: Returns False
         """
         return False
-    
+
     def authorization_header(self, request=None) -> str:
         """Set up for later task
 
