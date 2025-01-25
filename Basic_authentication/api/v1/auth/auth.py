@@ -22,7 +22,13 @@ class Auth:
         Returns:
             bool: Returns False
         """
-        return False
+        if path == None:
+            if excluded_paths == None or excluded_paths == []:
+                return True
+        
+        if path in excluded_paths:
+            return False
+
 
     def authorization_header(self, request=None) -> str:
         """Set up for later task
