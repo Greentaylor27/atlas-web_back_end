@@ -54,6 +54,11 @@ def not_found(error) -> str:
 
 @app.before_request
 def before_request():
+    """Runs before each request is made
+
+    Returns:
+        _type_: Uncertain
+    """
     if auth is None:
         return
     if auth and auth.require_auth(request.path, ['/api/v1/status/',
