@@ -21,6 +21,7 @@ if auth_type:
         from api.v1.auth.auth import Auth
         auth = Auth()
 
+
 @app.errorhandler(403)
 def youre_forbidden(error):
     """Forbidden
@@ -53,6 +54,7 @@ def not_found(error) -> str:
     """
     return jsonify({"error": "Not found"}), 404
 
+
 @app.before_request
 def before_request():
     """Runs before each request is made
@@ -62,15 +64,17 @@ def before_request():
     """
     if auth is None:
         return
+
     if auth and auth.require_auth(request.path, ['/api/v1/status/',
-                                     '/api/v1/unauthorized/',
-                                     '/api/v1/forbidden/']):
+                                                 '/api/v1/unauthorized/',
+                                                 '/api/v1/forbidden/']):
         if auth.authorization_header(request) is None:
             abort(401)
             return None
         if auth.current_user(request) is None:
             abort(403)
             return None
+
 
 if __name__ == "__main__":
     host = getenv("API_HOST", "0.0.0.0")
