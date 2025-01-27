@@ -3,6 +3,7 @@
 """Module used for Basic Authentication
 """
 from api.v1.auth.auth import Auth
+import base64
 
 
 class BasicAuth(Auth):
@@ -42,7 +43,7 @@ class BasicAuth(Auth):
         if not header_validation:
             return
         try:
-            decoded_header = base64_authorization_header.decode('utf-8')
-            return decoded_header
+            decoded_header = base64.b64decode(base64_authorization_header)
+            return decoded_header.decode('utf-8')
         except Exception:
             return None
