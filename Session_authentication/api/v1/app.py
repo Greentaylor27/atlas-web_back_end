@@ -66,19 +66,18 @@ def before_request():
     Returns:
         _type_: Uncertain
     """
-    request.current_user = auth.current_user(request)
     if auth is None:
         return
+    
+    request.current_user = auth.current_user(request)
 
     if auth and auth.require_auth(request.path, ['/api/v1/status/',
                                                  '/api/v1/unauthorized/',
                                                  '/api/v1/forbidden/']):
         if auth.authorization_header(request) is None:
             abort(401)
-            return None
         if request.current_user is None:
             abort(403)
-            return None
 
 if __name__ == "__main__":
     host = getenv("API_HOST", "0.0.0.0")
