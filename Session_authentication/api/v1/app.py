@@ -68,7 +68,7 @@ def before_request():
     """
     if auth is None:
         return
-    
+
     request.current_user = auth.current_user(request)
 
     if auth and auth.require_auth(request.path, ['/api/v1/status/',
@@ -78,6 +78,7 @@ def before_request():
             abort(401)
         if request.current_user is None:
             abort(403)
+
 
 if __name__ == "__main__":
     host = getenv("API_HOST", "0.0.0.0")
