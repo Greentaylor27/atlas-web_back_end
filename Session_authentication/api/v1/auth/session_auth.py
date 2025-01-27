@@ -29,8 +29,8 @@ class SessionAuth(Auth):
         if not user_validation:
             return None
 
-        session_id = uuid.uuid4
+        session_id = uuid.uuid4()
 
-        self.user_id_by_session_id = {session_id: user_id}
+        self.user_id_by_session_id[session_id] = user_id
 
-        return self.user_id_by_session_id
+        return session_id
