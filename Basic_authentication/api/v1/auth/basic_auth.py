@@ -3,7 +3,7 @@
 """Module used for Basic Authentication
 """
 from api.v1.auth.auth import Auth
-from api.v1.views.users import User
+from models.user import User
 import base64
 from typing import TypeVar
 
@@ -85,3 +85,10 @@ class BasicAuth(Auth):
         if not email_validation and not password_validation:
             return None
         
+        try:
+            user = User.search({'email': user_email})
+            if user and user[0]:
+                if user[0].is_valid_password(user_pwd):
+                    return user[0]
+        except Exception:
+            return None
