@@ -3,7 +3,9 @@
 """Module used for Basic Authentication
 """
 from api.v1.auth.auth import Auth
+from api.v1.views.users import User
 import base64
+from typing import TypeVar
 
 
 class BasicAuth(Auth):
@@ -65,8 +67,21 @@ class BasicAuth(Auth):
         if includes_colon == -1:
             return (None, None)
 
+        # was told to assume that decoded_base64 only had one :
         split_header = decoded_base64_authorization_header.split(":")
+        
         email = split_header[0]
         password = split_header[1]
 
         return (email, password)
+
+    def user_object_from_credentials(self, user_email: str, user_pwd: str) ->\
+    TypeVar('User'):
+        """from the credentials return the instance of the user
+        """
+        email_validation = isinstance(user_email, str)
+        password_validation = isinstance(user_pwd, str)
+
+        if not email_validation and not password_validation:
+            return None
+        

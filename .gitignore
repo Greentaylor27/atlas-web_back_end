@@ -11,3 +11,4 @@ Dockerfile
 Makefile
 personal_data/main.sql
 Basic_authentication/main.py
+Basic_authentication/.db_User.json
