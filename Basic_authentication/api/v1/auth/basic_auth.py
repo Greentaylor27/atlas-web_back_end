@@ -69,14 +69,14 @@ class BasicAuth(Auth):
 
         # was told to assume that decoded_base64 only had one :
         split_header = decoded_base64_authorization_header.split(":")
-        
+
         email = split_header[0]
         password = split_header[1]
 
         return (email, password)
 
     def user_object_from_credentials(self, user_email: str, user_pwd: str) ->\
-    TypeVar('User'):
+            TypeVar('User'):
         """from the credentials return the instance of the user
         """
         email_validation = isinstance(user_email, str)
@@ -84,7 +84,7 @@ class BasicAuth(Auth):
 
         if not email_validation and not password_validation:
             return None
-        
+
         try:
             user = User.search({'email': user_email})
             if user and user[0]:
