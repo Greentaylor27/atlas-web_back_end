@@ -66,6 +66,7 @@ def before_request():
     Returns:
         _type_: Uncertain
     """
+    request.current_user = auth.current_user(request)
     if auth is None:
         return
 
