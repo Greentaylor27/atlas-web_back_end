@@ -88,8 +88,9 @@ def before_request():
             return None
         if not auth.authorization_header(request) and\
                 not auth.session_cookie(request):
-            abort(403)
+            abort(401)
             return None
+    return
 
 
 if __name__ == "__main__":
