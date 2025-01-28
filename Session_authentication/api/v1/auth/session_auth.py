@@ -48,5 +48,5 @@ class SessionAuth(Auth):
 
         if not session_validation:
             return None
-        
+
         return self.user_id_by_session_id.get(session_id)
