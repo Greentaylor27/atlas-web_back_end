@@ -29,6 +29,37 @@ if auth_type:
         auth = SessionAuth()
 
 
+@app.before_request
+def before_request():
+    """Runs before each request is made
+
+    Returns:
+        _type_: Uncertain
+    """
+    excluded_paths = ['/api/v1/status/',
+                      '/api/v1/unauthorized/',
+                      '/api/v1/forbidden/',
+                      '/api/v1/auth_session/login/']
+
+    if auth is None:
+        return
+
+    request.current_user = auth.current_user(request)
+
+    if auth and auth.require_auth(request.path, excluded_paths):
+        if auth.authorization_header(request) is None:
+            abort(401)
+            return None
+        if auth.current_user is None:
+            abort(403)
+            return None
+        if not auth.authorization_header(request) and\
+                not auth.session_cookie(request):
+            abort(401)
+            return None
+    return
+
+
 @app.errorhandler(403)
 def youre_forbidden(error):
     """Forbidden
@@ -60,37 +91,6 @@ def not_found(error) -> str:
     """ Not found handler
     """
     return jsonify({"error": "Not found"}), 404
-
-
-@app.before_request
-def before_request():
-    """Runs before each request is made
-
-    Returns:
-        _type_: Uncertain
-    """
-    excluded_paths = ['/api/v1/status/',
-                      '/api/v1/unauthorized/',
-                      '/api/v1/forbidden/',
-                      '/api/v1/auth_session/login/']
-
-    if auth is None:
-        return
-
-    request.current_user = auth.current_user(request)
-
-    if auth and auth.require_auth(request.path, excluded_paths):
-        if auth.authorization_header(request) is None:
-            abort(401)
-            return None
-        if auth.current_user is None:
-            abort(403)
-            return None
-        if not auth.authorization_header(request) and\
-                not auth.session_cookie(request):
-            abort(401)
-            return None
-    return
 
 
 if __name__ == "__main__":
