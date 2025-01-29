@@ -11,7 +11,7 @@ from api.v1.views import app_views, User
 def login():
     """login for site
     """
-    email = request.form.get({'email': email})
+    email = request.form.get('email')
     password = request.form.get('password')
 
     if not email:
@@ -20,10 +20,10 @@ def login():
         return jsonify({ "error": "password missing" }), 400
     
     try:
-        user = User.search('email')
+        user = User.search(email)
     except Exception:
         return jsonify({ "error": "no user found for this email"}), 404
     
-    
+    return (user, email, password)
 
 
