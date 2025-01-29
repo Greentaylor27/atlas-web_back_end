@@ -3,7 +3,8 @@
 """Module for session authentication
 """
 from flask import Response, request, jsonify, abort
-from api.v1.views import app_views, User
+from api.v1.views import app_views
+from models.user import User
 import os
 
 
@@ -40,7 +41,6 @@ def login():
     user_json = user.to_json()
 
     response = jsonify(user_json)
-
     session_name = os.getenv('SESSION_NAME', 'session_id')
     response.set_cookie(session_name, session_id)
     return response
