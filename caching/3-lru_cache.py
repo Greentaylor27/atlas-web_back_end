@@ -20,31 +20,32 @@ class LRUCache(BaseCaching):
         self.cache_data = OrderedDict()
 
     def put(self, key, item):
-        """
-        Adds an element to the dictionary
+        """adds to the stack
 
         Args:
-            key: Where something is to be stored
-            item: What is being stored with Key
+            key (Any): Where something is being stored
+            item (Any): What is being stored
         """
-        keys = self.cache_data.keys()
+        if key is None or item is None:
+            return
+        
+        if key in self.cache_data:
+            self.cache_data.move_to_end(key)
 
-        if key and item:
-            if key in self.cache_data:
-                self.cache_data.move_to_end(key)
-            self.cache_data[key] = item
+        self.cache_data[key] = item
 
-        if len(keys) > BaseCaching.MAX_ITEMS:
-            least_used = list(self.cache_data.keys())[0]
-
-            print(f"DISCARD: {least_used}")
-            self.cache_data.pop(self.cache_data[0])
-
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            lru_key, _ = self.cache_data.popitem(last=False)
+            print(f'DISCARD: {lru_key}')
+    
     def get(self, key):
-        """
-        Grabs an entry from a dictionary using a key
+        """finds the value using a key
 
         Args:
-            key: Where to find the item
+            key (Any): Location where the data is being stored
         """
-        return self.cache_data.get(key)
+        try:
+            value = self.cache_data[key]
+            return value
+        except Exception:
+            return None
