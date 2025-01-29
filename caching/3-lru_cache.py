@@ -34,7 +34,7 @@ class LRUCache(BaseCaching):
 
         self.cache_data[key] = item
 
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             lru_key, _ = self.cache_data.popitem(last=False)
             print(f'DISCARD: {lru_key}')
     
