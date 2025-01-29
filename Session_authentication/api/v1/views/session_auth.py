@@ -2,7 +2,7 @@
 
 """Module for session authentication
 """
-from flask import Response, request, jsonify
+from flask import Response, request, jsonify, abort
 from api.v1.views import app_views, User
 
 
@@ -24,6 +24,16 @@ def login():
     except Exception:
         return jsonify({ "error": "no user found for this email"}), 404
     
-    return (user, email, password)
+    user = user[0]
 
+    if not user.is_valid_password(password):
+        return jsonify({ "error": "wrong password" }), 401
+    
+    else:
+        from api.v1.app import auth
 
+        session = auth.create_session(user.id)
+
+        if not session:
+            abort(500)
+        user_json = user.to_json()
