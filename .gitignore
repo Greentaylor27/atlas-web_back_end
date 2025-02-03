@@ -15,4 +15,4 @@ Basic_authentication/.db_User.json
 Session_authentication/.db_User.json
 Unittests_and_integration_tests/client.py
 Unittests_and_integration_tests/fixtures.py
-Unittests_and_integration_tests/utils.py
+
