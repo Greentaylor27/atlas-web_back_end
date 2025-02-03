@@ -13,6 +13,6 @@ personal_data/main.sql
 */main.py
 Basic_authentication/.db_User.json
 Session_authentication/.db_User.json
-Unittests_and_integgration_tests/utils.py
-Unittests_and_integgration_tests/client.py
-Unittests_and_integgration_tests/fixtures.py
+Unittests_and_integration_tests/client.py
+Unittests_and_integration_tests/fixtures.py
+Unittests_and_integration_tests/utils.py
