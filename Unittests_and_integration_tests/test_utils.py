@@ -6,6 +6,7 @@ import unittest
 from unittest.mock import Mock, patch
 from parameterized import parameterized
 
+
 class TestAccessNestedMap(unittest.TestCase):
     """Class used for unit testing access_nested_map()"""
 
@@ -27,6 +28,7 @@ class TestAccessNestedMap(unittest.TestCase):
         with self.assertRaises(expected):
             access_nested_map(nested_map, path)
 
+
 class TestGetJson(unittest.TestCase):
     """Class used for unittesting get_json()"""
 
@@ -34,7 +36,6 @@ class TestGetJson(unittest.TestCase):
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False})
     ])
-    
     @patch("utils.requests.get")
     def test_get_json(self, url, payload, mock_get):
         """Method used to test to see if a json is returned"""
@@ -47,6 +48,7 @@ class TestGetJson(unittest.TestCase):
         self.assertEqual(result, payload)
         mock_get.assert_called_once_with(url)
 
+
 class TestMemoize(unittest.TestCase):
     """Class used to test memoize()"""
 
@@ -56,17 +58,17 @@ class TestMemoize(unittest.TestCase):
         class TestClass:
             def a_method(self):
                 return 42
-            
+
             @memoize
             def a_property(self):
                 return self.a_method()
-            
+
         test_instance = TestClass()
 
         with patch.object(test_instance, 'a_method') as mock_method:
             mock_method.return_value = 42
             result = test_instance.a_property
-            
+
             self.assertEqual(result, mock_method.return_value)
             self.assertEqual(result, mock_method.return_value)
             mock_method.assert_called_once_with()
