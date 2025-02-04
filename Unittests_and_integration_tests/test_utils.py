@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
 """Unnittesting"""
-from utils import access_nested_map
+from utils import access_nested_map, get_json
 import unittest
+from unittest.mock import Mock, patch
 from parameterized import parameterized
 
 class TestAccessNestedMap(unittest.TestCase):
-    """Class used for unit testing Utils.py """
+    """Class used for unit testing access_nested_map()"""
 
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
@@ -26,3 +27,22 @@ class TestAccessNestedMap(unittest.TestCase):
         with self.assertRaises(expected):
             access_nested_map(nested_map, path)
 
+class TestGetJson(unittest.TestCase):
+    """Class used for unittesting get_json()"""
+
+    @parameterized.expand([
+        ("http://example.com", {"payload": True}),
+        ("http://holberton.io", {"payload": False})
+    ])
+    
+    @patch("utils.requests.get")
+    def test_get_json(self, url, payload, mock_get):
+        """Method used to test to see if a json is returned"""
+        mock_response = Mock()
+        mock_response.json.return_value = payload
+        mock_get.return_value = mock_response
+
+        result = get_json(url)
+
+        self.assertEqual(result, payload)
+        mock_get.assert_called_once_with(url)
