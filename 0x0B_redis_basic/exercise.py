@@ -3,7 +3,7 @@
 """Module used to practice redis with"""
 import redis
 import uuid
-from typing import Union, Callable
+from typing import Union, Callable, Optional
 
 
 
@@ -18,11 +18,19 @@ class Cache():
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, fn: Callable):
-        pass
+    def get(self, key: str, fn: Optional[Callable] = None):
+        retrieved_value = self._redis.get(key)
 
-    def get_str(self):
-        pass
+        if not retrieved_value:
+            return None
+        
+        if fn:
+            return fn(retrieved_value)
+        
+        return retrieved_value
 
-    def get_int(self):
-        pass
+    def get_str(self, key: str):
+        return self.get(key, lambda d: d.decode("utf-8"))
+
+    def get_int(self, key):
+        return self.get(key, int)
