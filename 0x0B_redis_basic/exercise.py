@@ -4,8 +4,17 @@
 import redis
 import uuid
 from typing import Union, Callable, Optional
+import functools
 
 
+
+def count_calls(method: Callable) -> Callable:
+    @functools.wraps(method)
+    def wrapper(self, *args, **kwargs):
+        key = method.__qualname__
+        self._redis.incr(key)
+        return method(self, key)
+    return wrapper
 
 class Cache():
     """Class used for redis"""
@@ -13,6 +22,7 @@ class Cache():
         self._redis = redis.Redis(host='localhost', port=6379)
         self._redis.flushdb()
 
+    @count_calls
     def store(self, data: Union[str, bytes, int, float]) -> str:
         key = str(uuid.uuid4())
         self._redis.set(key, data)
@@ -34,3 +44,5 @@ class Cache():
 
     def get_int(self, key):
         return self.get(key, int)
+    
+
