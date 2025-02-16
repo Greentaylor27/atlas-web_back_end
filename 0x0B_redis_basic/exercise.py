@@ -20,3 +20,9 @@ class Cache():
 
     def get(self, key: str, fn: Callable):
         pass
+
+    def get_str(self):
+        pass
+
+    def get_int(self):
+        pass
