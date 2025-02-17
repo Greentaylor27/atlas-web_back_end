@@ -1,6 +1,6 @@
 -- Creating a table of unique users
-CREATE TABLE users IF NOT EXISTS (
-   id  INT IS NOT NULL PRIMARY KEY
-   email VARCHAR(255) IS NOT NULL UNIQUE
+CREATE TABLE IF NOT EXISTS users (
+   id  INT NOT NULL PRIMARY KEY,
+   email VARCHAR(255) NOT NULL UNIQUE,
    name VARCHAR(255)
 )
