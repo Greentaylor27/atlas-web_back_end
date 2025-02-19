@@ -1,2 +1,2 @@
 // inserting new data into a mongodb database
-db.school.insertOne({name: "Holberton school"})
+db.school.insert({name: "Holberton school"})
