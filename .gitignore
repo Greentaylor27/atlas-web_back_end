@@ -20,3 +20,4 @@ atlas-localization/requirements.txt
 atlas-localization/myenv/
 MySQL_Advanced/myenv
 MySQL_Advanced/metal_bands.sql
+MySQL_Advanced/main.sql
