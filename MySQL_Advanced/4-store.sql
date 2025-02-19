@@ -6,7 +6,7 @@ AFTER INSERT ON orders
 FOR EACH ROW
     BEGIN
         UPDATE items
-        SET quantity = quantity - NEW.quantity_ordered
+        SET items.quantity = GREATEST(items.quantity - NEW.number, 0)
         WHERE items.name = NEW.item_name;
     END$$
 
