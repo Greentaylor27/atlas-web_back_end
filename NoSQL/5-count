@@ -1,2 +1,2 @@
 // Counting how many documents there are
-db.school.countDocuments({ });
+db.school.countDocuments({});
