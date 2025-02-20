@@ -1,0 +1,3 @@
+// updating documents
+
+db.school.updateMany({}, {address: "972 Mission street"})
