@@ -22,3 +22,8 @@ MySQL_Advanced/myenv
 MySQL_Advanced/metal_bands.sql
 MySQL_Advanced/main.sql
 NoSQL/myenv/
+Node_js/.eslintrc.js
+Node_js/babel.config.js
+Node_js/database.csv
+Node_js/package-lock.json
+Node_js/package.json
