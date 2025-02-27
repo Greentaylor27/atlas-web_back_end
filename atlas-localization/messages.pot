@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-02-05 10:57-0600\n"
+"POT-Creation-Date: 2025-02-06 15:13-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,306 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: app.py:3
+#: app.py:20
 msgid "Hello, World!"
+msgstr "Bonjour, le monde!"
+
+#: myenv/lib/python3.12/site-packages/click/_termui_impl.py:556
+#, python-brace-format
+msgid "{editor}: Editing failed"
 msgstr ""
 
-#: app.py:5
+#: myenv/lib/python3.12/site-packages/click/_termui_impl.py:560
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1124
+msgid "Aborted!"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1349
+#: myenv/lib/python3.12/site-packages/click/core.py:1379
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1396
+msgid "Options"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1422
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1438
+#, python-brace-format
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1645
+msgid "Commands"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1677
+msgid "Missing command."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1755
+#, python-brace-format
+msgid "No such command {name!r}."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2313
+msgid "Value must be an iterable."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2334
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2783
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2813
+msgid "(dynamic)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2828
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2841
+msgid "required"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/decorators.py:457
 #, python-format
-msgid "You have one message"
-msgid_plural "You have %(num)d messages"
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/decorators.py:520
+msgid "Show the version and exit."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/decorators.py:541
+msgid "Show this message and exit."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:49
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:88
+#, python-brace-format
+msgid "Error: {message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:80
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:129
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:131
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:187
+msgid "Missing argument"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:189
+msgid "Missing option"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:191
+msgid "Missing parameter"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:193
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:200
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:220
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:232
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:270
+msgid "unknown error"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:277
+#, python-brace-format
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/formatting.py:156
+msgid "Usage:"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/parser.py:233
+#, python-brace-format
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/parser.py:415
+#, python-brace-format
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/parser.py:476
+#, python-brace-format
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myenv/lib/python3.12/site-packages/click/shell_completion.py:326
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/shell_completion.py:333
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:158
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:174
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:176
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:187
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:243
+msgid "Error: invalid input"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:773
+msgid "Press any key to continue..."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:267
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:299
+#, python-brace-format
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:393
+#, python-brace-format
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:415
+#, python-brace-format
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:471
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:612
+#, python-brace-format
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:636
+#, python-brace-format
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:826
+msgid "file"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:828
+msgid "directory"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:830
+msgid "path"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:881
+#, python-brace-format
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:890
+#, python-brace-format
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:898
+#, python-brace-format
+msgid "{name} {filename!r} is a directory."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:907
+#, python-brace-format
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:916
+#, python-brace-format
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:925
+#, python-brace-format
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:992
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
 
