@@ -16,6 +16,6 @@ describe('calculateNumber', () =>  {
     });
 
     it('should round and sum 3 and 9.65', () =>{
-        assert.strictEqual(calc(3, 9.964), 13);
+        assert.strictEqual(calc(3, 9.65), 13);
     });
 });
