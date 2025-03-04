@@ -2,7 +2,7 @@ const assert = require('assert');
 const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () =>  {
-    it('Should return 7 after rounding and summing 2.75 and 4', () => {
-        assert.strictEqual(calculateNumber(2.75, 4), 7); // first number being rounded
+    it('Should return 1 after rounding and summing 1.1 and 0', () => {
+        assert.strictEqual(calculateNumber(1.1, 0), 1); // first number being rounded
     });
 });
