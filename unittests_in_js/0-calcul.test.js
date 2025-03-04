@@ -18,4 +18,20 @@ describe('calculateNumber', () =>  {
     it('should round and sum 3 and 9.65', () =>{
         assert.strictEqual(calc(3, 9.65), 13);
     });
+
+    it('should round and sum -1 and 2', () =>{
+        assert.strictEqual(calc(-1, 2), 1);
+    });
+
+    it('should round and sum 1 and -2', () =>{
+        assert.strictEqual(calc(1, -2), -1);
+    });
+
+    it('should round and sum 1 and -1.5', () =>{
+        assert.strictEqual(calc(1, -1.5), 0);
+    });
+
+    it('should round and sum -1 and 1.5', () =>{
+        assert.strictEqual(calc(-1, 1.5), 1);
+    });
 });
