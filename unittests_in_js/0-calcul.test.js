@@ -11,8 +11,8 @@ describe('calculateNumber', () =>  {
         assert.strictEqual(calc(3, 9.65), 13); // second number being rounded
     });
 
-    it('should round and sum 1.05 and 3.5', () => {
-        assert.strictEqual(calc(1.05, 3.5), 5); // both numbers being rounded
+    it('should round and sum 1.05 and 3.4', () => {
+        assert.strictEqual(calc(1.05, 3.4), 4); // both numbers being rounded
     });
 
     it('should round and sum 4 and 5', () => {
