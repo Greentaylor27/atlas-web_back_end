@@ -28,3 +28,6 @@ Node_js/database.csv
 Node_js/package-lock.json
 Node_js/package.json
 Node_js/main.js
+unittests_in_js/main.js
+unittests_in_js/package-lock.json
+unittests_in_js/package.json
