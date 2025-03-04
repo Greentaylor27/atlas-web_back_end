@@ -2,7 +2,6 @@ const sinon = require('sinon');
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./4-payment');
 const assert = require('assert');
-const { send } = require('express/lib/response');
 
 describe('Payment Request', () => {
     let consoleSpy;
