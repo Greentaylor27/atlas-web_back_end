@@ -16,5 +16,8 @@ function calculateNumber(type, a, b) {
             return roundedA / roundedB;
         }
     }
+    else {
+        return 'Invalid operation';
+    }
 }
 module.exports = calculateNumber
