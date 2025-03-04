@@ -4,15 +4,15 @@ const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', () =>  {
     it('should round and sum 2.75 and 4', () => {
-        assert.strictEqual(calc(2.75, 4), 6); // first number being rounded
+        assert.strictEqual(calc(2.75, 4), 7); // first number being rounded
     });
 
     it('should round and sum 3 and 9.65', () =>{
-        assert.strictEqual(calc(3, 9.65), 12); // second number being rounded
+        assert.strictEqual(calc(3, 9.65), 13); // second number being rounded
     });
 
     it('should round and sum 1.05 and 3.5', () => {
-        assert.strictEqual(calc(1.05, 3.5), 4); // both numbers being rounded
+        assert.strictEqual(calc(1.05, 3.5), 5); // both numbers being rounded
     });
 
     it('should round and sum 4 and 5', () => {
@@ -28,10 +28,10 @@ describe('calculateNumber', () =>  {
     });
 
     it('should round and sum 1 and -1.5', () =>{
-        assert.strictEqual(calc(1, -1.5), -1); // second number needs rounding and is negative 
+        assert.strictEqual(calc(1, -1.5), 0); // second number needs rounding and is negative 
     });
 
     it('should round and sum -1 and 1.5', () =>{
-        assert.strictEqual(calc(-1.5, 1), -1); // first number needs rounding and is negative
+        assert.strictEqual(calc(-1.5, 1), 0); // first number needs rounding and is negative
     });
 });
