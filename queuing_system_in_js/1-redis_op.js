@@ -11,8 +11,6 @@ client.on('error', (error) => {
     console.log(`Redis client not connected to the server: ${error}`)
 });
 
-const setAsync = promisify(client.set).bind(client);
-const getAsync = promisify(client.get).bind(client);
 
 async function setNewSchool(schoolName, value) {
     // console.log('set')
