@@ -13,8 +13,9 @@ app.get('/cart/:id', (req, res) => {
 
     if (/^\d+$/.test(id)) {
         res.status(200).send(`Payment methods for cart ${id}`);
+    } else {
+        res.status(404).send('id must be a number');
     }
-    res.status(404).send('id must be a number');
 });
 
 app.listen(port, () => {
