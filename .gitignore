@@ -30,3 +30,4 @@ Node_js/package.json
 Node_js/main.js
 unittests_in_js/main.js
 unittests_in_js/package-lock.json
+unittests_in_js/8-api/node_modules/*
