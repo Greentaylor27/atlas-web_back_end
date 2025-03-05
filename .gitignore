@@ -32,3 +32,6 @@ unittests_in_js/main.js
 unittests_in_js/package-lock.json
 unittests_in_js/8-api/node_modules/*
 unittests_in_js/9-api/node_modules/*
+queuing_system_in_js/node_modules/*
+queuing_system_in_js/redis-6.0.10
+queuing_system_in_js/redis-6.0.10.tar.gz
