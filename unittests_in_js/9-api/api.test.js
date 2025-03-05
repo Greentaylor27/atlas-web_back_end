@@ -31,4 +31,11 @@ describe('Index page', () => {
             done();
         });
     });
+
+    it('should return the correct message after connecting', (done) => {
+        request(localhost + '/cart/1', (error, response, body) => {
+            expect(response.body).to.be.a('string').that.equals('Payment methods for cart 1');
+            done();
+        })
+    });
 });
