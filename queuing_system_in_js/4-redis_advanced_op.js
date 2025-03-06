@@ -1,31 +1,38 @@
-import { redis } from "kue";
-import { createClient } from "redis";
+import { createClient } from 'redis';
 
-const key = `HolbertonSchools`
-
-const client = new createClient();
+const key = 'HolbertonSchools'
+const client = createClient();
 
 client.on('connect', () => {
-    console.log('Redis client connected to the server');
+    console.log('Redis client connected to the server')
 });
 
-client.on('error', (error) => {
-    console.log(`Redis client not connected to the server: ${error}`)
+client.on('error', () => {
+    console.log(`Error loading`);
 });
 
-client.connect().then(() => {
-    client.hSet(key, 'Portland', 50, redis.print);
-    client.hSet(key, 'Seattle', 80, redis.print);
-    client.hSet(key, 'New York', 20, redis.print);
-    client.hSet(key, 'Bogota', 20, redis.print);
-    client.hSet(key, 'Cali', 40, redis.print);
-    client.hSet(key, 'Paris', 2, redis.print);
+function setHash() {
+    client.hSet(key, 'Paris', 2, (error, reply) => {
+        if (error) {
+            console.error(`Error setting hash: ${error.message}`);
+        } else{
+            console.log(`Reply: ${reply}`);
+        }
+    });
+}
 
+function getHash() {
     client.hGetAll(key, (error, reply) => {
         if (error) {
-            console.error(`Error retrieving the hash: ${error}`);
+            console.error(`Error gathering Hash: ${error.message}`);
         } else {
-            console.log(reply)
+            console.log(reply);
         }
-    })
+    });
+}
+
+client.connect().then(() => {
+    setHash();
+    getHash();
+    client.quit();
 });
