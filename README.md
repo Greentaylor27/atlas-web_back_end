@@ -39,7 +39,7 @@ This project represents the foundation of future full-stack applications and exp
 ```bash
 git clone https://github.com/your-username/atlas-web_back_end.git
 cd <project name>
-
+```
 
 
 ## 🧠 Challenges Faced
