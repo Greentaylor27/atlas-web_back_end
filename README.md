@@ -65,5 +65,6 @@ Always looking for new challenges that push my skills beyond the basics.
 
 📎 Connect with me:
 
-[Linkedin](https://www.linkedin.com/in/greentaylor27/)
-[Portfolio Projects](https://github.com/Greentaylor27?tab=repositories)
+-[Linkedin](https://www.linkedin.com/in/greentaylor27/)
+
+-[Portfolio Projects](https://github.com/Greentaylor27?tab=repositories)
